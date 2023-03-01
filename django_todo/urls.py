@@ -1,4 +1,3 @@
-from todo.views import say_hello
 """django_todo URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -16,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from todo.views import say_hello
 
 urlpatterns = [
     path('hello/', say_hello, name='hello'),
