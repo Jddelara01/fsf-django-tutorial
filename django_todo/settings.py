@@ -11,9 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
 import dj_database_url
-import env
+import os
 
 if os.path.isfile("env.py"):
     import env
@@ -31,7 +30,7 @@ SECRET_KEY = 'django-insecure-h8*k63$&0m_z4#+aukdy5$5ssp5cg%2k1h+etbsyg=)wt)(@+!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ckz8780-django-todo-app.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -89,7 +88,7 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.parse("postgres://espjfovk:YeeZkjYLm0oYSRbLgKdZOqgN5ysPdbPu@trumpet.db.elephantsql.com/espjfovk")
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
